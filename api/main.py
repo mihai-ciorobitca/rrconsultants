@@ -36,5 +36,3 @@ def survey():
 @app.route("/authority")
 def authority():
     return render_template("authority.html")
-
-app.run()

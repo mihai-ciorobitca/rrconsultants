@@ -1,10 +1,17 @@
 from flask import Flask, render_template, session, request, redirect, url_for
+from dotenv import load_dotenv
+from os import getenv   
+
+load_dotenv()
+
+SECRET_KEY =  getenv("SECRET_KEY")
+TAWK_URL = getenv("TAWK_URL")  
+
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"  # Set a secret key for session management
+app.secret_key = SECRET_KEY
 
-
-# Function to set session language
+ 
 @app.route("/set_language/<lang>")
 def set_language(lang):
     session["language"] = lang
@@ -33,7 +40,7 @@ def index():
 @app.route("/cookies")
 def english_routes():
     session["language"] = "en"
-    return render_template(f"/en/{request.path[1:]}.html")
+    return render_template(f"/en/{request.path[1:]}.html", TAWK_URL = TAWK_URL)
 
 
 # Routes for Romanian pages
@@ -45,6 +52,6 @@ def english_routes():
 @app.route("/cookieuri")
 def romanian_routes():
     session["language"] = "ro"
-    return render_template(f"/ro/{request.path[1:]}.html")
+    return render_template(f"/ro/{request.path[1:]}.html", TAWK_URL=TAWK_URL)
 
  

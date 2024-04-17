@@ -7,33 +7,33 @@
     <title>R&R Consultants</title>
     <link href="/static/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <style> 
-        .dropdown-toggle-language {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-        }
-    </style>
+    <link rel="shortcut icon" href="/static/images/favicon.png" type="image/x-icon">
+
+
+    <script>
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6499ad1dcc26a871b024c5fa/1h3s4of20';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 
 </head>
 
 <body>
 
-    <div class="dropdown">
-        <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-language" type="button"
-            id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-translate"></i> {{current_language}}
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownLanguage">
-            <li><a class="dropdown-item" href="/set_language/ro">RO</a></li>
-            <li><a class="dropdown-item" href="/set_language/en">EN</a></li>
-        </ul>
-    </div>
+
 
     <header>
         <img src="/static/images/banner.png" alt="Banner" width="100%">
     </header>
+
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -78,22 +78,34 @@
                                         class="bi bi-envelope"></i> Email</a></li>
                             <li><a class="dropdown-item" href="https://wa.me/+40747045277"><i
                                         class="bi bi-whatsapp"></i> WhatsApp 1</a></li>
-                            <li><a class="dropdown-item" href="tel:+40747045277"><i class="bi bi-phone"></i> Telefon 1</a>
+                            <li><a class="dropdown-item" href="tel:+40747045277"><i class="bi bi-phone"></i> Telefon
+                                    1</a>
                             </li>
                             <li><a class="dropdown-item" href="https://wa.me/+40770417723"><i
                                         class="bi bi-whatsapp"></i> WhatsApp 2</a></li>
-                            <li><a class="dropdown-item" href="tel:+40770417723"><i class="bi bi-phone"></i> Telefon 2</a>
+                            <li><a class="dropdown-item" href="tel:+40770417723"><i class="bi bi-phone"></i> Telefon
+                                    2</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
-                
+
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-language" type="button"
+                    id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-translate"></i> {{current_language}}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownLanguage">
+                    <li><a class="dropdown-item" href="/set_language/ro">RO</a></li>
+                    <li><a class="dropdown-item" href="/set_language/en">EN</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
 
-    
+
 
 
     <main class="container py-4">
@@ -123,6 +135,50 @@
         <p class="mb-0"> Contact: +40747045277, +40770417723 <br> Locație: Str. Ioan Gânju nr.2, Bl. D5, SC.A, Ap.3,
             Iași 707035 <br> © 2023 R&amp;R Consults SRL. Toate drepturile rezervate. </p>
     </footer>
+
+    <div class="alert alert-info cookies-banner fixed-bottom" id="cookiesBanner" role="alert">
+        <p class="mb-0">
+            Acest site folosește cookie-uri pentru analiza performanțelor sale
+            <a href="/cookieuri" class="alert-link">Află mai mult</a>
+        </p>
+        <button id="acceptCookiesBtn" class="btn btn-primary mt-2">Accepta</button>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!getCookie("cookiesAccepted")) {
+                document.getElementById("cookiesBanner").style.display = "block";
+            }
+        });
+
+        function setCookie(name, value) {
+            document.cookie = `${name}=${value};path=/`;
+        }
+
+        function getCookie(name) {
+            const cookieValue = document.cookie.match(`(^|;)\\s*${name}\\s*=\\s*([^;]+)`);
+            return cookieValue ? cookieValue.pop() : "";
+        }
+
+        function acceptCookies() {
+            setCookie("cookiesAccepted", "true");
+            document.getElementById("cookiesBanner").style.display = "none";
+        }
+
+        function showCookiesPolicy() {
+            document.getElementById("cookiesPolicy").style.display = "block";
+        }
+
+        function closeCookiesPolicy() {
+            document.getElementById("cookiesPolicy").style.display = "none";
+        }
+
+        document.getElementById("acceptCookiesBtn").addEventListener("click", acceptCookies);
+        document.querySelector("a[href='#cookiesPolicy']").addEventListener("click", showCookiesPolicy);
+        document.querySelector(".cookies-policy a").addEventListener("click", closeCookiesPolicy);
+
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
 </body>

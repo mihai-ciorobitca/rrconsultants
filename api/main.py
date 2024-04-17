@@ -42,7 +42,7 @@ def english_routes():
 @app.route("/expertiza-contabila")
 @app.route("/contabilitate")
 @app.route("/despre-noi")
-@app.route("/cookiuri")
+@app.route("/cookieuri")
 def romanian_routes():
     session["language"] = "ro"
     return render_template(f"/ro/{request.path[1:]}.html")

@@ -1,11 +1,11 @@
 from flask import Flask, render_template, session, request, redirect, url_for
 from dotenv import load_dotenv
-from os import getenv   
+from os import environ   
 
-load_dotenv()
+load_dotenv() 
 
-SECRET_KEY =  getenv("SECRET_KEY")
-TAWK_URL = getenv("TAWK_URL")  
+SECRET_KEY =  environ.get("SECRET_KEY")
+TAWK_URL = environ.get("TAWK_URL")  
 
 
 app = Flask(__name__)

@@ -47,6 +47,4 @@ def romanian_routes():
     session["language"] = "ro"
     return render_template(f"/ro/{request.path[1:]}.html")
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
+ 

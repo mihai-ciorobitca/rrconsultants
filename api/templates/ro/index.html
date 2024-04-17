@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&R Consultants</title>
+    <link href="/static/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <style> 
+        .dropdown-toggle-language {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-language" type="button"
+            id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-translate"></i> {{current_language}}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownLanguage">
+            <li><a class="dropdown-item" href="/set_language/ro">RO</a></li>
+            <li><a class="dropdown-item" href="/set_language/en">EN</a></li>
+        </ul>
+    </div>
+
+    <header>
+        <img src="/static/images/banner.png" alt="Banner" width="100%">
+    </header>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/despre-noi"><i class="bi bi-person"></i> Despre noi</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-gear"></i> Servicii
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/consultanta-pentru-operatori-economici"><i
+                                        class="bi bi-person"></i> Consultanta pentru operatori economici</a></li>
+                            <li><a class="dropdown-item" href="/consultanta-autoritati-contractante"><i
+                                        class="bi bi-building"></i> Consultanta autoritati contractante</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/contabilitate"><i class="bi bi-calculator"></i>
+                                    Contabilitate</a></li>
+                            <li><a class="dropdown-item" href="/expertiza-contabila"><i
+                                        class="bi bi-file-earmark-bar-graph"></i> Expertiza contabila</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact"><i class="bi bi-envelope"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+
+
+    <main class="container py-4">
+        <section>
+            <div class="row">
+                <div class="col">
+                    <h2>R&R Consultants SRL</h2>
+                    <p>
+                        Este o companie de consultanță specializată în domeniul managementului și afacerilor. <br><br>
+                        Cu o echipă de experți și consultanți cu o vastă experiență în diverse industrii, compania oferă
+                        servicii profesionale și soluții personalizate pentru clienții săi. <br><br>
+                        Cu o gândire antreprenorială și orientați spre business, suntem o echipă multidisciplinară
+                        dispusă să analizeze, să construiască și sa participe la brainstorming-uri pentru a identifica
+                        soluții optime pentru dezvoltarea afacerilor. <br><br>
+                        Ne-am petrecut ultimii ani ajutând companiile sa scaleze, să discute cu investitorii cu
+                        autoritățile contractante și să găsească soluții pentru provocările cu care acestea se
+                        confruntă. <br><br>
+                        Folosim consultanța de business pentru a găsi cele mai optime soluții și transformăm orice
+                        proces într-unul de optimizare de costuri pentru antreprenori sau autorități contractante.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-light text-center py-4">
+        <p class="mb-0"> Contact: +40747045277, +40770417723 <br> Locație: Str. Ioan Gânju nr.2, Bl. D5, SC.A, Ap.3,
+            Iași 707035 <br> © 2023 R&amp;R Consults SRL. Toate drepturile rezervate. </p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
